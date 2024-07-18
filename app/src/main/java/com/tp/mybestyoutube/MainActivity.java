@@ -8,6 +8,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.tp.mybestyoutube.database.entity.YoutubeVideo;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -20,5 +22,14 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        // Initialisation de première vidéo
+        YoutubeVideo youtubeVideoTest = new YoutubeVideo();
+        youtubeVideoTest.titre = "Titre de test";
+        youtubeVideoTest.description = "Description de test";
+        youtubeVideoTest.url = "https://www.youtube.com/watch?v=jNQXAC9IVRw";
+        youtubeVideoTest.categorie = "Test";
+
     }
+
 }
