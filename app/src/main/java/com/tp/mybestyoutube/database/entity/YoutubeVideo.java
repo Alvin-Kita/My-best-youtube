@@ -1,13 +1,15 @@
 package com.tp.mybestyoutube.database.entity;
 
 import androidx.room.ColumnInfo;
+import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 /**
  * modèle pour stocker les informations d'une vidéo YouTube
  * (les catégories seront stockées sous forme de string) :
- * id (long), titre (String), description (String), url (String), categorie (String), favori (int)
+ * id (long), titre (String), description (String), url (String), categorie (String), favori (int).
  */
+@Entity(tableName = "YoutubeVideo")
 public class YoutubeVideo {
     @PrimaryKey(autoGenerate = true)
     public long id;
