@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">My Best Youtube</string>
+    <string name="home_button_add">+</string>
 </resources>
