@@ -1,13 +1,13 @@
 package com.tp.mybestyoutube;
 
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import androidx.activity.EdgeToEdge;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
-import com.tp.mybestyoutube.database.entity.BaseActivity;
 
 /**
  * Activité qui permet d'ajouter une vidéo YouTube
@@ -32,6 +32,16 @@ public class AddYouTubeActivity extends BaseActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        // Ajout du Spinner pour les catégories
+        Spinner spinner = findViewById(R.id.add_yt_spinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this,
+                R.array.add_yt_categories,
+                android.R.layout.simple_spinner_item
+        );
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
     }
 
 }

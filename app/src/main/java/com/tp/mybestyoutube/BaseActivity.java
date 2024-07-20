@@ -1,11 +1,9 @@
-package com.tp.mybestyoutube.database.entity;
+package com.tp.mybestyoutube;
 
 import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
-import com.tp.mybestyoutube.R;
 
 import java.util.Objects;
 

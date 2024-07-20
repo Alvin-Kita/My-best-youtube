@@ -9,14 +9,126 @@
 
     <include layout="@layout/toolbar" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="342dp"
-        android:text="Page Add YT Video"
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/my_toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/add_yt_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="10dp"
+                android:autofillHints="title"
+                android:hint="@string/add_yt_title"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:padding="10dp"
+                tools:ignore="VisualLintTextFieldSize" />
+
+            <EditText
+                android:id="@+id/add_yt_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="10dp"
+                android:autofillHints="description"
+                android:hint="@string/add_yt_description"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:padding="10dp"
+                tools:ignore="VisualLintTextFieldSize" />
+
+            <EditText
+                android:id="@+id/add_yt_link"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="10dp"
+                android:autofillHints="link"
+                android:hint="@string/add_yt_link"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:padding="10dp"
+                tools:ignore="VisualLintTextFieldSize" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="10dp">
+
+                <Spinner
+                    android:id="@+id/add_yt_spinner"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:background="@color/green"
+                    android:padding="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/add_yt_spinner_arrow"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/add_yt_spinner_arrow"
+                    android:layout_width="48dp"
+                    android:layout_height="0dp"
+                    android:background="@color/transparent"
+                    android:contentDescription="@string/description_add_yt_spinner_arrow"
+                    android:drawingCacheQuality="high"
+                    app:layout_constraintBottom_toBottomOf="@+id/add_yt_spinner"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/add_yt_spinner"
+                    app:layout_constraintTop_toTopOf="@+id/add_yt_spinner"
+                    app:srcCompat="@drawable/baseline_arrow_drop_down_24" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                style="?android:attr/buttonBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/add_yt_btn_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="48dp"
+                    android:background="@drawable/button"
+                    android:text="@string/add_yt_button_add"
+                    android:textColor="@color/white"
+                    tools:ignore="ButtonStyle,TextContrastCheck" />
+
+                <Button
+                    android:id="@+id/add_yt_btn_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="48dp"
+                    android:background="@drawable/button"
+                    android:text="@string/add_yt_button_cancel"
+                    android:textColor="@color/white"
+                    tools:ignore="ButtonStyle,TextContrastCheck" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

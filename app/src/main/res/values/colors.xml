@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
+    <color name="transparent">#00000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="red">#FFFF0000</color>
+
+    <!-- Catppuccin Frappé color : https://github.com/catppuccin/catppuccin -->
+    <color name="black">#232634</color>
+    <color name="red">#e78284</color>
     <color name="blue">#8caaee</color>
     <color name="green">#a6d189</color>
 </resources>
