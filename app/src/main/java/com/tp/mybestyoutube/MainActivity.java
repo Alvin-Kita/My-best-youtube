@@ -1,7 +1,8 @@
 package com.tp.mybestyoutube;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.ViewGroup;
+import android.view.MenuItem;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +17,24 @@ import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
+    /**
+     * Méthode qui permet de revenir à l'activité précédente
+     * @param item MenuItem
+     * @return boolean
+     */
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * Méthode qui initialise l'activité
+     * @param savedInstanceState Bundle
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,10 +47,10 @@ public class MainActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        ViewCompat.setOnApplyWindowInsetsListener(myToolbar, (v, insets) -> {
-            ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) v.getLayoutParams();
-            layoutParams.topMargin = insets.getInsets(WindowInsetsCompat.Type.statusBars()).top;
-            v.setLayoutParams(layoutParams);
+        // Ajout de padding pour les bords de l'écran
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
@@ -41,6 +60,12 @@ public class MainActivity extends AppCompatActivity {
         youtubeVideoTest.description = "Description de test";
         youtubeVideoTest.url = "https://www.youtube.com/watch?v=jNQXAC9IVRw";
         youtubeVideoTest.categorie = "Test";
+
+        // Bouton de redirection vers la page d'ajout de vidéo
+        findViewById(R.id.home_button_add).setOnClickListener(v -> {
+            Intent intent = new Intent(this, AddYouTubeActivity.class);
+            startActivity(intent);
+        });
 
     }
 
