@@ -41,7 +41,7 @@ pages
 
 #### *Page d'acceuil*
 
-![Page d'accueil](Images/MainMenu.png "Page d'accueil au premier lancement de l'application") <br>
+![Page d'accueil](Images/MainMenu.png "Page d'accueil au premier lancement de l'application") <br> <br>
 Au lancement de l'application, on arrive sur la page d'accueil qui affiche la liste des vidéos
 ajoutées. <br>
 Au premier lancement comme dit précédemment, une vidéo sera ajoutée automatiquement. On retrouve sur
@@ -54,7 +54,7 @@ cette page différent éléments :
 - Un Slider pour filtrer les favoris ainsi que le catégories. <br>
   *Il est parfaitement fonctionnel, mais pour ne pas surcharger le README je vous laisserais le
   tester directement sur le slider de la page d'acceuil, et sinon je peux vous envoyer des screens
-  supplémentaire*
+  supplémentaire* <br>
  ![Slider de filtre](Images/Filter.png "Slider de filtre") <br>
 
 A améliorer :
@@ -62,7 +62,7 @@ A améliorer :
 
 #### *Page détail de la vidéo*
 
-![Page détail de la vidéo](Images/ShowDetails.png "Page détail de la vidéo") <br>
+![Page détail de la vidéo](Images/ShowDetails.png "Page détail de la vidéo") <br> <br>
 En cliquant sur une vidéo de la liste, on arrive sur la page de détail de la vidéo clické. <br>
 On retrouve sur cette page différent éléments :
 
@@ -83,7 +83,7 @@ A améliorer :
 
 #### *Page de modification de vidéo*
 
-![Page de modification de vidéo](Images/EditVideo.png "Page de modification de vidéo") <br>
+![Page de modification de vidéo](Images/EditVideo.png "Page de modification de vidéo") <br> <br>
 En cliquant sur le bouton de modification de la vidéo, on arrive sur la page de modification de la
 video <br>
 Sur la capture ci-dessus on retrouve la page tel qu'elle est sans rien modifier dessus. <br>
@@ -99,19 +99,19 @@ On retrouve sur cette page différent éléments :
   page est trop petite sur des petit écrans (et pour que je teste le ScrollView sur Java Android)
 - Un bouton pour valider la modifications de la vidéo et revenir à la page d'acceuil avec un message
   Toast pour confirmer la modification (ci-dessous) <br>
-  ![Message Toast de modification](Images/EditToast.png "Message Toast de modification") <br>
+  ![Message Toast de modification](Images/EditToast.png "Message Toast de modification") <br> <br>
 - Si des champs sont vides, un message Toast indique que la modification n'a pas pu être effectuée,
-  et les champs vides sont mis en évidences (ci-dessous) <br>
-  ![Message Toast de modification](Images/AddVideoError.png "Message Toast d'erreur de modification") <br>
+  et les champs vides sont mis en évidences (ci-dessous) <br> <br>
+  ![Message Toast de modification](Images/AddVideoError.png "Message Toast d'erreur de modification") <br> <br>
 - Un bouton pour annuler la modification de la vidéo et revenir sur la page de détail de la vidéo
 
 #### *Page d'ajout de vidéo*
 
-![Page d'ajout de vidéo](Images/AddVideo.png "Page d'ajout de vidéo") <br>
+![Page d'ajout de vidéo](Images/AddVideo.png "Page d'ajout de vidéo") <br> <br>
 Je passe directement à la page d'ajout de vidéo, car elle est très similaire à la page de
 modification. <br>
 Les deux pages appellent la même activité, la difference est faite par un boolean "*isEditing*" qui
-est passé à true quand on appelle la page en version modification. <br>
+est passé à true quand on appelle la page en version modification. <br> <br>
 
 Les différences avec la page de modification sont :
 
@@ -122,7 +122,7 @@ Les différences avec la page de modification sont :
 
 Je vais prendre l'exemple de l'ajout de vidéo de l'énoncé (comme ci-dessous) pour montrer le
 fonctionnement de la page pour regarder une vidéo. <br>
-![Ajout de vidéo de l'énoncé](Images/AddVideoSujet.png "Ajout de vidéo de l'énoncé") <br>
+![Ajout de vidéo de l'énoncé](Images/AddVideoSujet.png "Ajout de vidéo de l'énoncé") <br> <br>
 
 #### *Page de lecture de vidéo*
 
@@ -156,7 +156,7 @@ Le lien du GitLab d'un projet d'application pour téléphone auquel j'ai partici
 [Projet de course d'orientation](https://gitlab.com/projetMesi/BrainChaseRunner)
 
 Une application de course d'orientation sur Flutter qui exploite les données de localisation pour se repérer sur une carte dans un parcours, puis répondre à des questions. <br>
-L'application exploite les données de localisation, la requête de données sur une app back en Java, l'affichage d'une carte dynamique, la gestion de questionnaires et du DevOps. <br>
+L'application exploite les données de localisation, l'identification avec le compte Google, la requête de données sur une app back en Java, l'affichage d'une carte dynamique, la gestion de questionnaires et du DevOps. <br>
 
 Elle est testable sur telephone à l'url: [BrainChaseRunner](https://brainchase.pxly.fr/)
 (Il y'a un bouton caché sur le score pour validé le point de passage à toutes les distance)
@@ -166,4 +166,3 @@ Elle est testable sur telephone à l'url: [BrainChaseRunner](https://brainchase.
 ## *Auteur*
 Alvin KITA
 Etudiant à l'ipi Lyon en concepteur développeur d'application full Stack
-```
