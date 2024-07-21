@@ -1,6 +1,7 @@
 package com.tp.mybestyoutube.database.dao;
 
 import androidx.room.Dao;
+import androidx.room.Insert;
 import androidx.room.Query;
 
 import com.tp.mybestyoutube.database.entity.YoutubeVideo;
@@ -19,9 +20,8 @@ public interface YoutubeVideoDao {
     List<YoutubeVideo> getAll();
 
     // Ajouter une vidéo
-    @Query("INSERT INTO YoutubeVideo (titre, description, url, categorie, favori) VALUES (:titre, :description, :url, :categorie, :favori)")
-    void add(String titre, String description, String url, String categorie, int favori);
-
+    @Insert
+    void addVideo(YoutubeVideo video);
 
     //--- Action sur une vidéo en fonction de l'id ---//
 

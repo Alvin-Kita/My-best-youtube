@@ -8,6 +8,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.tp.mybestyoutube.database.AppDatabase;
 import com.tp.mybestyoutube.database.entity.YoutubeVideo;
 
 /**
@@ -36,6 +37,8 @@ public class MainActivity extends BaseActivity {
 
         // Initialisation de première vidéo TODO: à supprimer
         YoutubeVideo youtubeVideoTest = new YoutubeVideo("Titre de test", "Description de test", "jNQXAC9IVRw", "Test", 0);
+        AppDatabase db = AppDatabase.getDb(this);
+        db.youtubeVideoDao().addVideo(youtubeVideoTest);
 
         // Bouton de redirection vers la page d'ajout de vidéo
         findViewById(R.id.home_button_add).setOnClickListener(v -> {
