@@ -8,8 +8,11 @@ titre, une description, l'url YouTube et choisir une catégorie (Sport, Music, C
 
 ## *Context de développement*
 
-L'application sera développée sur mon PC Archlinux en Java avec Android Studio et le plugin SonartLint pour optimiser au maximum le code [Page officiel du plugin SonarLint](https://plugins.jetbrains.com/plugin/7973-sonarlint).
-Je vais utiliser mon téléphone de test sous Android 11, un Crosscall Core-X5 pour tester l'application, et également un émulateur Android Pixel A3.
+L'application sera développée sur mon PC Archlinux en Java avec Android Studio et le plugin
+SonartLint pour optimiser au maximum le
+code [Page officiel du plugin SonarLint](https://plugins.jetbrains.com/plugin/7973-sonarlint). <br>
+Je vais utiliser mon téléphone de test sous Android 11, un Crosscall Core-X5 pour tester
+l'application, et également un émulateur Android Pixel A3.
 
 ## *Liens utiles*
 
