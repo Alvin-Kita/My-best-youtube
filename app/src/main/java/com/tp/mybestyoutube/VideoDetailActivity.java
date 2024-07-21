@@ -33,17 +33,26 @@ public class VideoDetailActivity extends BaseActivity {
         String formattedLink = getString(R.string.video_detail_formatted_link, link);
         String category = getIntent().getStringExtra("category");
         String formattedCategory = getString(R.string.video_detail_formatted_category, category);
+        int favorite = getIntent().getIntExtra("favori", 0);
+
 
         // Affichage des informations de la vidéo
         TextView titleTextView = findViewById(R.id.video_detail_title);
         TextView descriptionTextView = findViewById(R.id.video_detail_description);
         TextView linkTextView = findViewById(R.id.video_detail_link);
         TextView categoryTextView = findViewById(R.id.video_detail_category);
+        TextView favoriteTextView = findViewById(R.id.video_detail_favorite);
 
         titleTextView.setText(formattedTitle);
         descriptionTextView.setText(formattedDescription);
         linkTextView.setText(formattedLink);
         categoryTextView.setText(formattedCategory);
+
+        if (favorite == 1) {
+            favoriteTextView.setText(R.string.video_detail_favorite_true);
+        } else {
+            favoriteTextView.setText(R.string.video_detail_favorite_false);
+        }
 
         // Bouton Voici la vidéo
         findViewById(R.id.video_detail_button_see).setOnClickListener(v -> {
@@ -60,7 +69,7 @@ public class VideoDetailActivity extends BaseActivity {
             intent.putExtra("description", description);
             intent.putExtra("link", link);
             intent.putExtra("category", category);
-            intent.putExtra("favorite", getIntent().getBooleanExtra("favorite", false));
+            intent.putExtra("favori", favorite);
             intent.putExtra("isEditing", true); // Indique que a AddYoutubeActivity que l'on est en mode édition
             startActivity(intent);
         });

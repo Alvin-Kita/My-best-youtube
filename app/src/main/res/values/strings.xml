@@ -30,6 +30,10 @@
     <string name="video_detail_button_see">Voir</string>
     <string name="video_detail_button_edit">modifier</string>
     <string name="video_detail_button_remove">Supprimer</string>
+    <string name="video_detail_favorite">Favorite :"</string>
+    <string name="video_detail_favorite_true">La vidéo est dans les favoris</string>
+    <string name="video_detail_favorite_false">La vidéo n\'est pas dans les favoris</string>
+
 
     <!-- Messages d'interfaces -->
     <string name='add_yt_error_EditText'>Le champs n\'est pas renseigné</string>

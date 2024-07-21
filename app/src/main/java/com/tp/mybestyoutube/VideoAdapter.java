@@ -63,6 +63,7 @@ class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHolder> {
             intent.putExtra("description", video.description);
             intent.putExtra("link", video.link);
             intent.putExtra("category", video.category);
+            intent.putExtra("favori", video.favori);
             v.getContext().startActivity(intent);
         });
     }

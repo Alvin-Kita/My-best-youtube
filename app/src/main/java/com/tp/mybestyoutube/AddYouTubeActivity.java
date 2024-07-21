@@ -99,7 +99,8 @@ public class AddYouTubeActivity extends BaseActivity {
             String description = getIntent().getStringExtra("description");
             String link = getIntent().getStringExtra("link");
             String category = getIntent().getStringExtra("category");
-            boolean favorite = getIntent().getBooleanExtra("favorite", false);
+            int favoriteInt = getIntent().getIntExtra("favori", 0);
+            boolean favorite = favoriteInt == 1;
 
             EditText titleEditText = findViewById(R.id.add_yt_title);
             EditText descriptionEditText = findViewById(R.id.add_yt_description);
@@ -118,7 +119,8 @@ public class AddYouTubeActivity extends BaseActivity {
                 String newDescription = descriptionEditText.getText().toString();
                 String newLink = linkEditText.getText().toString();
                 String newCategory = spinner.getSelectedItem().toString();
-                int newFavorite = favoriteSwitchCompat.isChecked() ? 1 : 0;
+                boolean newFavoriteBool = favoriteSwitchCompat.isChecked();
+                int newFavorite = newFavoriteBool ? 1 : 0;
 
                 // Vérification des champs
                 if (newTitle.isEmpty() || newDescription.isEmpty() || newLink.isEmpty()) {
