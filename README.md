@@ -8,6 +8,7 @@ titre, une description, l'url YouTube et choisir une catégorie (Sport, Music, C
 
 ## Sommaire
 
+- [Sommaire](#sommaire)
 - [Context de développement](#Context-de-développement)
 - [Notes](#notes)
 - [Détails de l'application](#détails-de-lapplication)
