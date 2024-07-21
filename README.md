@@ -24,7 +24,7 @@ En contrepartie la sécurité sur cette page doit être renforcée à terme pour
 
 ## *Détails de l'application*
 
-[Page d'accueil](Images/MainMenu.png)
+![Page d'accueil](Images/MainMenu.png "Page d'accueil au premier lancement de l'application")
 Au lancement de l'application, on arrive sur la page d'accueil qui affiche la liste des vidéos ajoutées. 
 
 ## *Liens utiles*
