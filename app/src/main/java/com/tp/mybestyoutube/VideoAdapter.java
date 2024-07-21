@@ -1,5 +1,6 @@
 package com.tp.mybestyoutube;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,6 +55,16 @@ class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHolder> {
         YoutubeVideo video = videoList.get(position);
         holder.title.setText(video.title);
         holder.description.setText(video.description);
+
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(v.getContext(), VideoDetailActivity.class);
+            intent.putExtra("id", video.id);
+            intent.putExtra("title", video.title);
+            intent.putExtra("description", video.description);
+            intent.putExtra("link", video.link);
+            intent.putExtra("category", video.category);
+            v.getContext().startActivity(intent);
+        });
     }
 
     /**
