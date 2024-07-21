@@ -27,6 +27,7 @@
     <string name="video_detail_formatted_description">Description : %s</string>">
     <string name="video_detail_formatted_link">lien : %s</string>">
     <string name="video_detail_formatted_category">Catégorie : %s</string>">
+    <string name="video_detail_button_see">Voir</string>
 
     <!-- Messages d'interfaces -->
     <string name='add_yt_error_EditText'>Le champs n\'est pas renseigné</string>

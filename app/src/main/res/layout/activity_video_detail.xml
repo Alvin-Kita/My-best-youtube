@@ -1,4 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_video_detail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -35,4 +36,16 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/add_yt_btn_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="0dp"
+        android:background="@drawable/button"
+        android:text="@string/video_detail_button_see"
+        android:textColor="@color/white"
+        tools:ignore="TextContrastCheck" />
 </LinearLayout>
