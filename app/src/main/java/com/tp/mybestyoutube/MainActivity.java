@@ -2,6 +2,10 @@ package com.tp.mybestyoutube;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import androidx.activity.EdgeToEdge;
 import androidx.core.graphics.Insets;
@@ -65,6 +69,47 @@ public class MainActivity extends BaseActivity {
             startActivity(intent);
         });
 
+        // Spinner de catégories
+        Spinner spinner = findViewById(R.id.home_spinner);
+        ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(
+                this,
+                R.array.home_categories,
+                android.R.layout.simple_spinner_item
+        );
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(spinnerAdapter);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedCategory = parent.getItemAtPosition(position).toString();
+                filterVideos(selectedCategory);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // Ne fais rien, est appelé quand rien est selectionné
+                // Il y'a peut être mieux à faire mais je manque de temps
+            }
+        });
+    }
+
+    private void filterVideos(String category) {
+        AppDatabase db = AppDatabase.getDb(this);
+        List<YoutubeVideo> filteredVideos;
+
+
+        if (category.equals("Tous")) {
+            filteredVideos = db.youtubeVideoDao().getAll();
+        } else if (category.equals("Favoris")) {
+            filteredVideos = db.youtubeVideoDao().getFavoris();
+        } else {
+            filteredVideos = db.youtubeVideoDao().getByCategorie(category);
+        }
+
+        VideoAdapter adapter = new VideoAdapter(filteredVideos);
+        RecyclerView videosRecyclerView = findViewById(R.id.homeRecyclerView);
+        videosRecyclerView.setAdapter(adapter);
     }
 
     /**

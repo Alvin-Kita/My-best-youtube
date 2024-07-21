@@ -9,6 +9,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.tp.mybestyoutube.database.AppDatabase;
+
 public class VideoDetailActivity extends BaseActivity {
 
     /**
@@ -72,6 +74,13 @@ public class VideoDetailActivity extends BaseActivity {
             intent.putExtra("favori", favorite);
             intent.putExtra("isEditing", true); // Indique que a AddYoutubeActivity que l'on est en mode édition
             startActivity(intent);
+        });
+
+        // Bouton de suppression de la vidéo
+        findViewById(R.id.video_detail_button_remove).setOnClickListener(v -> {
+            AppDatabase db = AppDatabase.getDb(this);
+            db.youtubeVideoDao().deleteById(id);
+            finish();
         });
 
         // Ajout de padding pour les bords de l'écran

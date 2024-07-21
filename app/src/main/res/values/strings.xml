@@ -3,6 +3,16 @@
 
     <!-- activity_main.xml -->
     <string name="home_button_add">+</string>
+    <!-- Spinner doc : https://developer.android.com/develop/ui/views/components/spinner?hl=fr -->
+    <string-array name="home_categories">
+        <item>Tous</item>
+        <item>Favoris</item>
+        <item>Humour</item>
+        <item>Science</item>
+        <item>Technologie</item>
+        <item>Art</item>
+        <item>Autre</item>
+    </string-array>
 
     <!-- activity_add_youtube.xml -->
     <string name="add_yt_title">Le nom de la vidéo à garder</string>
@@ -10,7 +20,6 @@
     <string name="add_yt_link">Lien (ex: jNQXAC9IVRw)</string>
     <string name="add_yt_favorite">Mettre en favori</string>
 
-    <!-- Spinner doc : https://developer.android.com/develop/ui/views/components/spinner?hl=fr -->
     <!-- TODO: Mettre des catégories plus ispirées -->
     <string-array name="add_yt_categories">
         <item>Humour</item>
