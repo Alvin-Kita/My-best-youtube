@@ -23,6 +23,11 @@
     <string name="add_yt_button_add">Ajouter</string>
     <string name="add_yt_button_cancel">Annuler</string>
 
+    <!-- video_detail.xml -->
+    <string name="video_detail_formatted_description">Description : %s</string>">
+    <string name="video_detail_formatted_link">lien : %s</string>">
+    <string name="video_detail_formatted_category">Catégorie : %s</string>">
+
     <!-- Messages d'interfaces -->
     <string name='add_yt_error_EditText'>Le champs n\'est pas renseigné</string>
     <string name='add_yt_error_toast'>Tous les champs doivent être renseignés</string>

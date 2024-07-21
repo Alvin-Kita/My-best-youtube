@@ -25,10 +25,13 @@ public class VideoDetailActivity extends BaseActivity {
         // Récupération des informations de la vidéo
         long id = getIntent().getLongExtra("id", -1);
         String title = getIntent().getStringExtra("title");
-        String idAndTitle = id + ". " + title;
+        String formattedTitle = id + ". " + title;
         String description = getIntent().getStringExtra("description");
+        String formattedDescription = getString(R.string.video_detail_formatted_description, description);
         String link = getIntent().getStringExtra("link");
+        String formattedLink = getString(R.string.video_detail_formatted_link, link);
         String category = getIntent().getStringExtra("category");
+        String formattedCategory = getString(R.string.video_detail_formatted_category, category);
 
         // Affichage des informations de la vidéo
         TextView titleTextView = findViewById(R.id.video_detail_title);
@@ -36,10 +39,10 @@ public class VideoDetailActivity extends BaseActivity {
         TextView linkTextView = findViewById(R.id.video_detail_link);
         TextView categoryTextView = findViewById(R.id.video_detail_category);
 
-        titleTextView.setText(idAndTitle);
-        descriptionTextView.setText(description);
-        linkTextView.setText(link);
-        categoryTextView.setText(category);
+        titleTextView.setText(formattedTitle);
+        descriptionTextView.setText(formattedDescription);
+        linkTextView.setText(formattedLink);
+        categoryTextView.setText(formattedCategory);
 
 
         // Ajout de padding pour les bords de l'écran
