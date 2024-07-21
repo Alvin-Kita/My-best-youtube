@@ -162,7 +162,7 @@ readme* <br> <br>
 
 L'application est fonctionnelle, et les fonctionnalités demandées sont implémentées. <br>
 Il reste des améliorations à faire, mais l'application est utilisable en l'état. Le string.xml à
-l'air de données une grandes adaptation au differentes langues, le color.xml et le
+l'air de donner une grandes adaptation au differentes langues, le color.xml et le
 contenu du dossier drawable garantie la possibilité de faire très rapidement une nouvelle peau à
 l'application. Et la gestion des thèmes sombre et clair est intéressante <br>. J'ai beaucoup utilisé
 Android Studio pour mes projets sur Flutter, mais j'ai l'
