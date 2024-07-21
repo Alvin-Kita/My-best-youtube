@@ -100,7 +100,7 @@ A améliorer :
   plus
   de temps*
 - *Le boutons me paraissent un peu haut*
-<br> <br>
+  <br> <br>
 
 ### *Page de modification de vidéo* <hr>
 
@@ -161,9 +161,12 @@ readme* <br> <br>
 ### Conclusion <hr>
 
 L'application est fonctionnelle, et les fonctionnalités demandées sont implémentées. <br>
-Il reste des améliorations à faire, mais l'application est utilisable en l'état. La mise en place à
-été RecyclerView. J'ai beaucoup utilisé Android Studio pour mes projets sur Flutter, mais j'ai l'
-impression de redécouvrir l'outil avec ce langage. Et les documentation sont très complètes c'est
+Il reste des améliorations à faire, mais l'application est utilisable en l'état. Le string.xml à
+l'air de données une grandes adaptation au differentes langues, le color.xml et le
+contenu du dossier drawable garantie la possibilité de faire très rapidement une nouvelle peau à
+l'application. Et la gestion des thèmes sombre et clair est intéressante <br>. J'ai beaucoup utilisé
+Android Studio pour mes projets sur Flutter, mais j'ai l'
+impression de redécouvrir l'outil avec Android JAVA langage. Et les documentation sont très complètes c'est
 agréable <br> <br>
 
 ## *Liens utiles*
