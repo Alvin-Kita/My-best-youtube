@@ -37,7 +37,7 @@ public class YoutubeVideo {
         id = 0;
         this.title = title;
         this.description = description;
-        this.link = link;
+        this.link = "https://www.youtube.com/watch?v=" + link;
         this.category = category;
         this.favori = favori;
     }

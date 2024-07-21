@@ -48,6 +48,14 @@ public class MainActivity extends BaseActivity {
 
         List<YoutubeVideo> videos = db.youtubeVideoDao().getAll();
 
+        // Ajout de la vidéo de test si la base de données est vide
+        if (videos.isEmpty()) {
+            // TODO: Passer les paramètres de la vidéo dans string.xml
+            YoutubeVideo videoTest = new YoutubeVideo("Première vidéo", "Première vidéos d'une longue série", "jNQXAC9IVRw", "Autre", 0);
+            db.youtubeVideoDao().addVideo(videoTest);
+            videos = db.youtubeVideoDao().getAll();
+        }
+
         VideoAdapter adapter = new VideoAdapter(videos);
         videosRecyclerView.setAdapter(adapter);
 
