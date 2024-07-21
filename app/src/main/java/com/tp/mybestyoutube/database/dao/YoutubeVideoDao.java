@@ -3,6 +3,7 @@ package com.tp.mybestyoutube.database.dao;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import com.tp.mybestyoutube.database.entity.YoutubeVideo;
 
@@ -22,6 +23,11 @@ public interface YoutubeVideoDao {
     // Ajouter une vidéo
     @Insert
     void addVideo(YoutubeVideo video);
+
+    // Modifier une vidéo
+    @Update
+    void updateVideo(YoutubeVideo video);
+
 
     //--- Action sur une vidéo en fonction de l'id ---//
 
@@ -48,6 +54,10 @@ public interface YoutubeVideoDao {
     @Query("DELETE FROM YoutubeVideo WHERE titre = :titre")
     void deleteByTitre(String titre);
 
+    //--- Action sur une vidéo en fonction de la description ---//
+    @Query("SELECT * FROM YoutubeVideo WHERE description IN (:description)")
+    static void updateDescription(long id, String description) {}
+
     //--- Action sur une vidéo en fonction de l'url ---//
 
     // Récupérer une vidéo en fonction de son url
@@ -56,7 +66,7 @@ public interface YoutubeVideoDao {
 
     // Mettre à jour l'url d'une vidéo
     @Query("UPDATE YoutubeVideo SET url = :url WHERE id = :id")
-    void updateUrl(long id, String url);
+    static void updateUrl(long id, String url) {}
 
     // Supprimer une vidéo en fonction de son url
     @Query("DELETE FROM YoutubeVideo WHERE url = :url")
@@ -69,9 +79,9 @@ public interface YoutubeVideoDao {
     @Query("SELECT * FROM YoutubeVideo WHERE categorie IN (:categorie)")
     List<YoutubeVideo> getByCategorie(String categorie);
 
-    // Ajouter une video à une catégorie
+    // Mettre à jour la catégorie d'une vidéo
     @Query("UPDATE YoutubeVideo SET categorie = :categorie WHERE id = :id")
-    void addCategorie(long id, String categorie);
+    static void updateCategorie(long id, String categorie) {}
 
     // Supprimer une vidéo d'une catégorie
     @Query("UPDATE YoutubeVideo SET categorie = '' WHERE id = :id")
@@ -84,9 +94,9 @@ public interface YoutubeVideoDao {
     @Query("SELECT * FROM YoutubeVideo WHERE favori IN (1)")
     List<YoutubeVideo> getFavoris();
 
-    // Ajouter une vidéo en favori
+    // Mettre à jour le statut favori d'une vidéo
     @Query("UPDATE YoutubeVideo SET favori = 1 WHERE id = :id")
-    void addFavori(long id);
+    static void updateFavori(long id, int favori) {}
 
     // Supprimer une vidéo des favoris
     @Query("UPDATE YoutubeVideo SET favori = 0 WHERE id = :id")

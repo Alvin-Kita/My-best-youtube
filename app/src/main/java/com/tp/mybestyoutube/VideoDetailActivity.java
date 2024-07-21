@@ -52,6 +52,19 @@ public class VideoDetailActivity extends BaseActivity {
             startActivity(intent);
         });
 
+        // Bouton de redirection vers la page de modification de la vidéo
+        findViewById(R.id.video_detail_button_edit).setOnClickListener(v -> {
+            Intent intent = new Intent(this, AddYouTubeActivity.class);
+            intent.putExtra("id", id);
+            intent.putExtra("title", title);
+            intent.putExtra("description", description);
+            intent.putExtra("link", link);
+            intent.putExtra("category", category);
+            intent.putExtra("favorite", getIntent().getBooleanExtra("favorite", false));
+            intent.putExtra("isEditing", true); // Indique que a AddYoutubeActivity que l'on est en mode édition
+            startActivity(intent);
+        });
+
         // Ajout de padding pour les bords de l'écran
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.activity_video_detail), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());

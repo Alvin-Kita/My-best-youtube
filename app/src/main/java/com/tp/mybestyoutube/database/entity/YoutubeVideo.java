@@ -41,4 +41,21 @@ public class YoutubeVideo {
         this.category = category;
         this.favori = favori;
     }
+
+    /**
+     * Méthode pour mettre à jour les informations d'une vidéo
+     *
+     * @param title       String
+     * @param description String
+     * @param link        String
+     * @param category    String
+     * @param favori      int
+     */
+    public void updateYoutubeVideo(String title, String description, String link, String category, int favori) {
+        this.title = title;
+        this.description = description;
+        this.link = link;
+        this.category = category;
+        this.favori = favori;
+    }
 }

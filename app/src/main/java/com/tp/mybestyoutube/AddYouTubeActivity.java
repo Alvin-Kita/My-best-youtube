@@ -1,5 +1,6 @@
 package com.tp.mybestyoutube;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -13,6 +14,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.tp.mybestyoutube.database.AppDatabase;
+import com.tp.mybestyoutube.database.dao.YoutubeVideoDao;
 import com.tp.mybestyoutube.database.entity.YoutubeVideo;
 
 /**
@@ -89,6 +91,65 @@ public class AddYouTubeActivity extends BaseActivity {
 
             }
         });
+
+        // Récupération des informations de la vidéo si on est en mode édition
+        if (getIntent().getBooleanExtra("isEditing", false)) {
+            long id = getIntent().getLongExtra("id", -1);
+            String title = getIntent().getStringExtra("title");
+            String description = getIntent().getStringExtra("description");
+            String link = getIntent().getStringExtra("link");
+            String category = getIntent().getStringExtra("category");
+            boolean favorite = getIntent().getBooleanExtra("favorite", false);
+
+            EditText titleEditText = findViewById(R.id.add_yt_title);
+            EditText descriptionEditText = findViewById(R.id.add_yt_description);
+            EditText linkEditText = findViewById(R.id.add_yt_link);
+            SwitchCompat favoriteSwitchCompat = findViewById(R.id.add_yt_switch);
+
+            titleEditText.setText(title);
+            descriptionEditText.setText(description);
+            linkEditText.setText(link);
+            spinner.setSelection(adapter.getPosition(category));
+            favoriteSwitchCompat.setChecked(favorite);
+
+            // Bouton modifier qui modifie la vidéo dans la base de données
+            findViewById(R.id.add_yt_btn_add).setOnClickListener(v -> {
+                String newTitle = titleEditText.getText().toString();
+                String newDescription = descriptionEditText.getText().toString();
+                String newLink = linkEditText.getText().toString();
+                String newCategory = spinner.getSelectedItem().toString();
+                int newFavorite = favoriteSwitchCompat.isChecked() ? 1 : 0;
+
+                // Vérification des champs
+                if (newTitle.isEmpty() || newDescription.isEmpty() || newLink.isEmpty()) {
+                    if (newTitle.isEmpty()) {
+                        titleEditText.setError(getString(R.string.add_yt_error_EditText));
+                    }
+                    if (newDescription.isEmpty()) {
+                        descriptionEditText.setError(getString(R.string.add_yt_error_EditText));
+                    }
+                    if (newLink.isEmpty()) {
+                        linkEditText.setError(getString(R.string.add_yt_error_EditText));
+                    }
+                    Toast.makeText(this, getString(R.string.add_yt_error_toast), Toast.LENGTH_SHORT).show();
+                } else {
+                    // Modification de la vidéo dans la base de données
+
+                    AppDatabase db = AppDatabase.getDb(this);
+                    YoutubeVideoDao youtubeVideoDao = db.youtubeVideoDao();
+                    YoutubeVideo youtubeVideo = youtubeVideoDao.getById(id);
+                    youtubeVideo.updateYoutubeVideo(newTitle, newDescription, newLink, newCategory, newFavorite);
+                    youtubeVideoDao.updateVideo(youtubeVideo);
+
+                    // Retour à la page d'acceuil
+                    Intent intent = new Intent(this, MainActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+
+                    finish();
+                }
+            });
+        }
     }
 
 }
