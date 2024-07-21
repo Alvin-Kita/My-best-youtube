@@ -45,14 +45,14 @@ l'application, et également un émulateur Android Pixel A3.
 
 ## *Détails de l'application*
 
-#### *Toolbar*
+### *Toolbar*
 
 Toutes les pages de l'application possèdent une toolbar avec un titre et un bouton pour revenir à la
 page précédente. <br>
 Les éléments propres au téléphone (bar du haut, bar de bouton du bas) sont exclus du sizing des
 pages
 
-#### *Page d'acceuil*
+### *Page d'acceuil*
 
 ![Page d'accueil](Images/MainMenu.png "Page d'accueil au premier lancement de l'application") <br> <br>
 Au lancement de l'application, on arrive sur la page d'accueil qui affiche la liste des vidéos
@@ -73,7 +73,7 @@ cette page différent éléments :
 A améliorer :
 *Une option pour supprimer toutes les vidéos serait le prochain ajout que je ferais à l'application*
 
-#### *Page détail de la vidéo*
+### *Page détail de la vidéo*
 
 ![Page détail de la vidéo](Images/ShowDetails.png "Page détail de la vidéo") <br> <br>
 En cliquant sur une vidéo de la liste, on arrive sur la page de détail de la vidéo clické. <br>
@@ -94,7 +94,7 @@ A améliorer :
   de temps*
 - *Le boutons me paraissent un peu haut*
 
-#### *Page de modification de vidéo*
+### *Page de modification de vidéo*
 
 ![Page de modification de vidéo](Images/EditVideo.png "Page de modification de vidéo") <br> <br>
 En cliquant sur le bouton de modification de la vidéo, on arrive sur la page de modification de la
@@ -118,7 +118,7 @@ On retrouve sur cette page différent éléments :
   ![Message Toast de modification](Images/AddVideoError.png "Message Toast d'erreur de modification") <br> <br>
 - Un bouton pour annuler la modification de la vidéo et revenir sur la page de détail de la vidéo
 
-#### *Page d'ajout de vidéo*
+### *Page d'ajout de vidéo*
 
 ![Page d'ajout de vidéo](Images/AddVideo.png "Page d'ajout de vidéo") <br> <br>
 Je passe directement à la page d'ajout de vidéo, car elle est très similaire à la page de
@@ -137,7 +137,7 @@ Je vais prendre l'exemple de l'ajout de vidéo de l'énoncé (comme ci-dessous) 
 fonctionnement de la page pour regarder une vidéo. <br>
 ![Ajout de vidéo de l'énoncé](Images/AddVideoSujet.png "Ajout de vidéo de l'énoncé") <br> <br>
 
-#### *Page de lecture de vidéo*
+### *Page de lecture de vidéo*
 
 ![Page détail de la vidéo](Images/ShowDetails2.png "Page détail de la vidéo") <br> <br>
 Suite à l'ajout de la vidéo, on peut la lire en accédant au détails de la vidéo, puis en cliquant
@@ -149,7 +149,7 @@ On arrive sur une page qui affiche la vidéo dans un iframe. <br>
 *Le choix de l'iframe, et ces conséquences sont expliqués dans la partie "Notes" au début du
 readme* <br>
 
-#### Conclusion
+### Conclusion
 
 L'application est fonctionnelle, et les fonctionnalités demandées sont implémentées. <br>
 Il reste des améliorations à faire, mais l'application est utilisable en l'état. La mise en place à
