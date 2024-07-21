@@ -83,6 +83,7 @@ public class AddYouTubeActivity extends BaseActivity {
 
                 AppDatabase db = AppDatabase.getDb(this);
                 db.youtubeVideoDao().addVideo(youtubeVideo);
+
                 Toast.makeText(this, getString(R.string.add_yt_succes_toast), Toast.LENGTH_SHORT).show();
                 finish();
 

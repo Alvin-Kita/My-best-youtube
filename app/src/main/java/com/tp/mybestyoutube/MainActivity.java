@@ -7,9 +7,13 @@ import androidx.activity.EdgeToEdge;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.tp.mybestyoutube.database.AppDatabase;
 import com.tp.mybestyoutube.database.entity.YoutubeVideo;
+
+import java.util.List;
 
 /**
  * Activité principale de l'application (page d'accueil)
@@ -35,10 +39,17 @@ public class MainActivity extends BaseActivity {
             return insets;
         });
 
-        // Initialisation de première vidéo TODO: à supprimer
-        YoutubeVideo youtubeVideoTest = new YoutubeVideo("Titre de test", "Description de test", "jNQXAC9IVRw", "Test", 0);
+        // Initialisation de la base de données
         AppDatabase db = AppDatabase.getDb(this);
-        db.youtubeVideoDao().addVideo(youtubeVideoTest);
+
+        // Initialisation de la liste des vidéos
+        RecyclerView videosRecyclerView = findViewById(R.id.homeRecyclerView);
+        videosRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        List<YoutubeVideo> videos = db.youtubeVideoDao().getAll();
+
+        VideoAdapter adapter = new VideoAdapter(videos);
+        videosRecyclerView.setAdapter(adapter);
 
         // Bouton de redirection vers la page d'ajout de vidéo
         findViewById(R.id.home_button_add).setOnClickListener(v -> {
@@ -48,4 +59,16 @@ public class MainActivity extends BaseActivity {
 
     }
 
+    /**
+     * Méthode qui met à jour la liste des vidéos quand on revient sur la page d'accueil pour appliquer les modifications faites sur les autres pages
+     */
+    @Override
+    protected void onResume() {
+        super.onResume();
+        AppDatabase db = AppDatabase.getDb(this);
+        List<YoutubeVideo> videos = db.youtubeVideoDao().getAll();
+        VideoAdapter adapter = new VideoAdapter(videos);
+        RecyclerView videosRecyclerView = findViewById(R.id.homeRecyclerView);
+        videosRecyclerView.setAdapter(adapter);
+    }
 }
