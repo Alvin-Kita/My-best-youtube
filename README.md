@@ -6,6 +6,19 @@ L'application My Best YouTube est une application Android qui permettra de gére
 personnelle des meilleurs vidéo trouvées sur YouTube. Pour Chaque vidéo on pourra renseigner son
 titre, une description, l'url YouTube et choisir une catégorie (Sport, Music, Comédie, …).
 
+## Sommaire
+- [Context de développement](#Context-de-développement)
+- [Notes](#notes)
+- [Détails de l'application](#détails-de-lapplication)
+  - [Toolbar](#toolbar)
+  - [Page d'accueil](#page-dacceuil)
+  - [Page détail de la vidéo](#page-détail-de-la-vidéo)
+  - [Page de modification de vidéo](#page-de-modification-de-vidéo)
+  - [Page d'ajout de vidéo](#page-dajout-de-vidéo)
+  - [Page de lecture de vidéo](#page-de-lecture-de-vidéo)
+- [Liens utiles](#liens-utiles)
+- [Autres projets](#autres-projet) 
+
 ## *Context de développement*
 
 L'application sera développée sur mon PC Archlinux en Java avec Android Studio et le plugin
