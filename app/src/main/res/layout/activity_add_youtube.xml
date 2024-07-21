@@ -65,6 +65,18 @@
                 android:padding="10dp"
                 tools:ignore="VisualLintTextFieldSize" />
 
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/add_yt_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="10dp"
+                android:minHeight="48dp"
+                android:padding="10dp"
+                android:text="@string/add_yt_favorite"
+                tools:ignore="VisualLintButtonSize" />
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

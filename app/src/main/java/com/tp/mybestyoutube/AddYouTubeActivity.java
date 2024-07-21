@@ -7,6 +7,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.widget.SwitchCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -56,11 +57,13 @@ public class AddYouTubeActivity extends BaseActivity {
             EditText titleEditText = findViewById(R.id.add_yt_title);
             EditText descriptionEditText = findViewById(R.id.add_yt_description);
             EditText linkEditText = findViewById(R.id.add_yt_link);
+            SwitchCompat favoriteSwitchCompat = findViewById(R.id.add_yt_switch);
 
             String title = titleEditText.getText().toString();
             String description = descriptionEditText.getText().toString();
             String link = linkEditText.getText().toString();
             String category = spinner.getSelectedItem().toString();
+            int favorite = favoriteSwitchCompat.isChecked() ? 1 : 0;
 
             // Vérification des champs
             if (title.isEmpty() || description.isEmpty() || link.isEmpty()) {
@@ -76,7 +79,7 @@ public class AddYouTubeActivity extends BaseActivity {
                 Toast.makeText(this, getString(R.string.add_yt_error_toast), Toast.LENGTH_SHORT).show();
             } else {
                 // Création de l'objet YoutubeVideo et ajout à la base de données
-                YoutubeVideo youtubeVideo = new YoutubeVideo(title, description, link, category, 0);
+                YoutubeVideo youtubeVideo = new YoutubeVideo(title, description, link, category, favorite);
 
                 AppDatabase db = AppDatabase.getDb(this);
                 db.youtubeVideoDao().addVideo(youtubeVideo);
