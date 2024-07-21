@@ -15,19 +15,30 @@ public class YoutubeVideo {
     public long id;
 
     @ColumnInfo(name = "titre")
-    public String titre;
+    public String title;
 
     @ColumnInfo(name = "description")
     public String description;
 
     @ColumnInfo(name = "url")
-    public String url;
+    public String link;
 
     @ColumnInfo(name = "categorie")
-    public String categorie;
+    public String category;
 
     @ColumnInfo(name = "favori")
     public int favori;
 
 
+    /**
+     * Constructeur
+     */
+    public YoutubeVideo(String title, String description, String link, String category, int favori) {
+        id = 0;
+        this.title = title;
+        this.description = description;
+        this.link = link;
+        this.category = category;
+        this.favori = favori;
+    }
 }

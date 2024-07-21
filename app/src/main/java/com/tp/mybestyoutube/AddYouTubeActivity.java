@@ -2,12 +2,17 @@ package com.tp.mybestyoutube;
 
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.tp.mybestyoutube.database.AppDatabase;
+import com.tp.mybestyoutube.database.entity.YoutubeVideo;
 
 /**
  * Activité qui permet d'ajouter une vidéo YouTube
@@ -42,6 +47,44 @@ public class AddYouTubeActivity extends BaseActivity {
         );
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
+
+        // Bouton annuler qui ramène sur la page d'accueil
+        findViewById(R.id.add_yt_btn_cancel).setOnClickListener(v -> finish());
+
+        // Bouton ajouter qui ajoute la vidéo à la base de données
+        findViewById(R.id.add_yt_btn_add).setOnClickListener(v -> {
+            EditText titleEditText = findViewById(R.id.add_yt_title);
+            EditText descriptionEditText = findViewById(R.id.add_yt_description);
+            EditText linkEditText = findViewById(R.id.add_yt_link);
+
+            String title = titleEditText.getText().toString();
+            String description = descriptionEditText.getText().toString();
+            String link = linkEditText.getText().toString();
+            String category = spinner.getSelectedItem().toString();
+
+            // Vérification des champs
+            if (title.isEmpty() || description.isEmpty() || link.isEmpty()) {
+                if (title.isEmpty()) {
+                    titleEditText.setError(getString(R.string.add_yt_error_EditText));
+                }
+                if (description.isEmpty()) {
+                    descriptionEditText.setError(getString(R.string.add_yt_error_EditText));
+                }
+                if (link.isEmpty()) {
+                    linkEditText.setError(getString(R.string.add_yt_error_EditText));
+                }
+                Toast.makeText(this, getString(R.string.add_yt_error_toast), Toast.LENGTH_SHORT).show();
+            } else {
+                // Création de l'objet YoutubeVideo et ajout à la base de données
+                YoutubeVideo youtubeVideo = new YoutubeVideo(title, description, link, category, 0);
+
+                AppDatabase db = AppDatabase.getDb(this);
+                db.youtubeVideoDao().add(youtubeVideo.title, youtubeVideo.description, youtubeVideo.link, youtubeVideo.category, youtubeVideo.favori);
+                Toast.makeText(this, getString(R.string.add_yt_succes_toast), Toast.LENGTH_SHORT).show();
+                finish();
+
+            }
+        });
     }
 
 }

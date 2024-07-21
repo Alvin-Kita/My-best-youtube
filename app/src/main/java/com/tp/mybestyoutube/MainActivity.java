@@ -34,12 +34,8 @@ public class MainActivity extends BaseActivity {
             return insets;
         });
 
-        // Initialisation de première vidéo
-        YoutubeVideo youtubeVideoTest = new YoutubeVideo();
-        youtubeVideoTest.titre = "Titre de test";
-        youtubeVideoTest.description = "Description de test";
-        youtubeVideoTest.url = "https://www.youtube.com/watch?v=jNQXAC9IVRw";
-        youtubeVideoTest.categorie = "Test";
+        // Initialisation de première vidéo TODO: à supprimer
+        YoutubeVideo youtubeVideoTest = new YoutubeVideo("Titre de test", "Description de test", "jNQXAC9IVRw", "Test", 0);
 
         // Bouton de redirection vers la page d'ajout de vidéo
         findViewById(R.id.home_button_add).setOnClickListener(v -> {
