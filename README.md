@@ -7,17 +7,19 @@ personnelle des meilleurs vidéo trouvées sur YouTube. Pour Chaque vidéo on po
 titre, une description, l'url YouTube et choisir une catégorie (Sport, Music, Comédie, …).
 
 ## Sommaire
+
 - [Context de développement](#Context-de-développement)
 - [Notes](#notes)
 - [Détails de l'application](#détails-de-lapplication)
-  - [Toolbar](#toolbar)
-  - [Page d'accueil](#page-dacceuil)
-  - [Page détail de la vidéo](#page-détail-de-la-vidéo)
-  - [Page de modification de vidéo](#page-de-modification-de-vidéo)
-  - [Page d'ajout de vidéo](#page-dajout-de-vidéo)
-  - [Page de lecture de vidéo](#page-de-lecture-de-vidéo)
+    - [Toolbar](#toolbar)
+    - [Page d'accueil](#page-dacceuil)
+    - [Page détail de la vidéo](#page-détail-de-la-vidéo)
+    - [Page de modification de vidéo](#page-de-modification-de-vidéo)
+    - [Page d'ajout de vidéo](#page-dajout-de-vidéo)
+    - [Page de lecture de vidéo](#page-de-lecture-de-vidéo)
 - [Liens utiles](#liens-utiles)
-- [Autres projets](#autres-projet) 
+- [Autres projets](#autres-projet)
+  <br> <br>
 
 ## *Context de développement*
 
@@ -26,6 +28,7 @@ SonartLint pour optimiser au maximum le
 code [Page officiel du plugin SonarLint](https://plugins.jetbrains.com/plugin/7973-sonarlint). <br>
 Je vais utiliser mon téléphone de test sous Android 11, un Crosscall Core-X5 pour tester
 l'application, et également un émulateur Android Pixel A3.
+<br> <br>
 
 ## *Notes*
 
@@ -39,20 +42,22 @@ l'application, et également un émulateur Android Pixel A3.
 
 - J'ai utilisé le thème Catppuccin pour les couleurs de l'application, elles se prête bien à une
   application avec un thème clair et un theme sombre. Bien que n'ai pas eu le temps d'implementer
-  cette feature, ainsi qu'une version en Anglais pour pleinement utilisé string.xml. Mais tout est en
+  cette feature, ainsi qu'une version en Anglais pour pleinement utilisé string.xml. Mais tout est
+  en
   place pour une utilisation future <br>
-  [Couleurs Catppuccin utilisées dans l'application](https://github.com/catppuccin/catppuccin) <br>
+  [Couleurs Catppuccin utilisées dans l'application](https://github.com/catppuccin/catppuccin) <br> <br>
 
 ## *Détails de l'application*
 
-### *Toolbar*
+### *Toolbar* <hr>
 
 Toutes les pages de l'application possèdent une toolbar avec un titre et un bouton pour revenir à la
 page précédente. <br>
 Les éléments propres au téléphone (bar du haut, bar de bouton du bas) sont exclus du sizing des
 pages
+<br> <br>
 
-### *Page d'acceuil*
+### *Page d'acceuil* <hr>
 
 ![Page d'accueil](Images/MainMenu.png "Page d'accueil au premier lancement de l'application") <br> <br>
 Au lancement de l'application, on arrive sur la page d'accueil qui affiche la liste des vidéos
@@ -68,12 +73,13 @@ cette page différent éléments :
   *Il est parfaitement fonctionnel, mais pour ne pas surcharger le README je vous laisserais le
   tester directement sur le slider de la page d'acceuil, et sinon je peux vous envoyer des screens
   supplémentaire* <br>
- ![Slider de filtre](Images/Filter.png "Slider de filtre") <br>
+  ![Slider de filtre](Images/Filter.png "Slider de filtre") <br>
 
 A améliorer :
 *Une option pour supprimer toutes les vidéos serait le prochain ajout que je ferais à l'application*
+<br> <br>
 
-### *Page détail de la vidéo*
+### *Page détail de la vidéo* <hr>
 
 ![Page détail de la vidéo](Images/ShowDetails.png "Page détail de la vidéo") <br> <br>
 En cliquant sur une vidéo de la liste, on arrive sur la page de détail de la vidéo clické. <br>
@@ -93,8 +99,9 @@ A améliorer :
   plus
   de temps*
 - *Le boutons me paraissent un peu haut*
+<br> <br>
 
-### *Page de modification de vidéo*
+### *Page de modification de vidéo* <hr>
 
 ![Page de modification de vidéo](Images/EditVideo.png "Page de modification de vidéo") <br> <br>
 En cliquant sur le bouton de modification de la vidéo, on arrive sur la page de modification de la
@@ -117,8 +124,9 @@ On retrouve sur cette page différent éléments :
   et les champs vides sont mis en évidences (ci-dessous) <br> <br>
   ![Message Toast de modification](Images/AddVideoError.png "Message Toast d'erreur de modification") <br> <br>
 - Un bouton pour annuler la modification de la vidéo et revenir sur la page de détail de la vidéo
+  <br> <br>
 
-### *Page d'ajout de vidéo*
+### *Page d'ajout de vidéo* <hr>
 
 ![Page d'ajout de vidéo](Images/AddVideo.png "Page d'ajout de vidéo") <br> <br>
 Je passe directement à la page d'ajout de vidéo, car elle est très similaire à la page de
@@ -137,7 +145,7 @@ Je vais prendre l'exemple de l'ajout de vidéo de l'énoncé (comme ci-dessous) 
 fonctionnement de la page pour regarder une vidéo. <br>
 ![Ajout de vidéo de l'énoncé](Images/AddVideoSujet.png "Ajout de vidéo de l'énoncé") <br> <br>
 
-### *Page de lecture de vidéo*
+### *Page de lecture de vidéo* <hr>
 
 ![Page détail de la vidéo](Images/ShowDetails2.png "Page détail de la vidéo") <br> <br>
 Suite à l'ajout de la vidéo, on peut la lire en accédant au détails de la vidéo, puis en cliquant
@@ -147,35 +155,42 @@ On arrive sur une page qui affiche la vidéo dans un iframe. <br>
 ![Page de lecture de vidéo](Images/VideoLecteur.png "Page de lecture de vidéo") <br>
 
 *Le choix de l'iframe, et ces conséquences sont expliqués dans la partie "Notes" au début du
-readme* <br>
+readme* <br> <br>
 
-### Conclusion
+### Conclusion <hr>
 
 L'application est fonctionnelle, et les fonctionnalités demandées sont implémentées. <br>
 Il reste des améliorations à faire, mais l'application est utilisable en l'état. La mise en place à
 été RecyclerView. J'ai beaucoup utilisé Android Studio pour mes projets sur Flutter, mais j'ai l'
 impression de redécouvrir l'outil avec ce langage. Et les documentation sont très complètes c'est
-agréable <br>
+agréable <br> <br>
 
 ## *Liens utiles*
 
 - [Procédure de connexion de téléphone en adb](Procédure_connexion_telephone_adb.md)
 - [Documentation Android](https://developer.android.com/docs)
 - [Couleurs Catppuccin utilisées dans l'application](https://github.com/catppuccin/catppuccin)
+  <br> <br>
 
 ## *Autres projet*
 
-Le lien du GitLab d'un projet d'application pour téléphone auquel j'ai participé dans le cadre du module de projet MESI : <br>
+Le lien du GitLab d'un projet d'application pour téléphone auquel j'ai participé dans le cadre du
+module de projet MESI : <br>
 [Projet de course d'orientation](https://gitlab.com/projetMesi/BrainChaseRunner)
 
-Une application de course d'orientation sur Flutter qui exploite les données de localisation pour se repérer sur une carte dans un parcours, puis répondre à des questions. <br>
-L'application exploite les données de localisation, l'identification avec le compte Google, la requête de données sur une app back en Java, l'affichage d'une carte dynamique, la gestion de questionnaires et du DevOps. <br>
+Une application de course d'orientation sur Flutter qui exploite les données de localisation pour se
+repérer sur une carte dans un parcours, puis répondre à des questions. <br>
+L'application exploite les données de localisation, l'identification avec le compte Google, la
+requête de données sur une app back en Java, l'affichage d'une carte dynamique, la gestion de
+questionnaires et du DevOps. <br>
 
 Elle est testable sur telephone à l'url: [BrainChaseRunner](https://brainchase.pxly.fr/)
 (Il y'a un bouton caché sur le score pour validé le point de passage à toutes les distance)
 
 ![BrainChaseRunner](Images/BrainChase.png "BrainChaseRunner")
+<br> <br>
 
 ## *Auteur*
+
 Alvin KITA
 Etudiant à l'ipi Lyon en concepteur développeur d'application full Stack
