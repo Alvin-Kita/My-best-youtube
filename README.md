@@ -14,6 +14,14 @@ code [Page officiel du plugin SonarLint](https://plugins.jetbrains.com/plugin/79
 Je vais utiliser mon téléphone de test sous Android 11, un Crosscall Core-X5 pour tester
 l'application, et également un émulateur Android Pixel A3.
 
+## *Note*
+
+- Si la base est vide au lancement de l'application, une entrée avec la toute première vidéo de YouTube sera ajoutée.
+
+- J'utilise un iframe et donc javascript pour afficher la vidéo, je ne veux pas pas payer pour l'API
+de YouTube, et souhaite avoir un affichage directement dans l'application. <br> 
+En contrepartie la sécurité sur cette page doit être renforcée à terme pour éviter les attaques XSS (cross-site scripting).
+
 ## *Liens utiles*
 
 - [Procédure de connexion de téléphone en adb](Procédure_connexion_telephone_adb.md)

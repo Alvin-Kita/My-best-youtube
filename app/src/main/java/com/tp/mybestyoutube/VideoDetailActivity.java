@@ -1,5 +1,6 @@
 package com.tp.mybestyoutube;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -44,6 +45,12 @@ public class VideoDetailActivity extends BaseActivity {
         linkTextView.setText(formattedLink);
         categoryTextView.setText(formattedCategory);
 
+        // Bouton Voici la vidéo
+        findViewById(R.id.video_detail_button_see).setOnClickListener(v -> {
+            Intent intent = new Intent(this, YoutubePlayerActivity.class);
+            intent.putExtra("link", link);
+            startActivity(intent);
+        });
 
         // Ajout de padding pour les bords de l'écran
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.activity_video_detail), (v, insets) -> {
