@@ -48,6 +48,8 @@
     <string name='add_yt_error_EditText'>Le champs n\'est pas renseigné</string>
     <string name='add_yt_error_toast'>Tous les champs doivent être renseignés</string>
     <string name='add_yt_succes_toast'>Vidéo ajoutée avec succès</string>
+    <string name='edit_yt_succes_toast'>Vidéo modifiée avec succès</string>
+
 
 
 </resources>

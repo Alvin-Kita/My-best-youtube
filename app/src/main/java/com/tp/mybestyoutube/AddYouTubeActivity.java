@@ -143,6 +143,9 @@ public class AddYouTubeActivity extends BaseActivity {
                     youtubeVideo.updateYoutubeVideo(newTitle, newDescription, newLink, newCategory, newFavorite);
                     youtubeVideoDao.updateVideo(youtubeVideo);
 
+                    // Message de succès
+                    Toast.makeText(this, getString(R.string.edit_yt_succes_toast), Toast.LENGTH_SHORT).show();
+
                     // Retour à la page d'acceuil
                     Intent intent = new Intent(this, MainActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
