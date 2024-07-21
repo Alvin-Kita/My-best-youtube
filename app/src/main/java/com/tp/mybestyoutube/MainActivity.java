@@ -94,10 +94,14 @@ public class MainActivity extends BaseActivity {
         });
     }
 
+    /**
+     * Méthode qui filtre les vidéos en fonction de la catégorie sélectionnée
+     *
+     * @param category Catégorie sélectionnée
+     */
     private void filterVideos(String category) {
         AppDatabase db = AppDatabase.getDb(this);
         List<YoutubeVideo> filteredVideos;
-
 
         if (category.equals("Tous")) {
             filteredVideos = db.youtubeVideoDao().getAll();

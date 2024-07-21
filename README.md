@@ -22,6 +22,11 @@ l'application, et également un émulateur Android Pixel A3.
 de YouTube, et souhaite avoir un affichage directement dans l'application. <br> 
 En contrepartie la sécurité sur cette page doit être renforcée à terme pour éviter les attaques XSS (cross-site scripting).
 
+## *Détails de l'application*
+
+[Page d'accueil](Images/MainMenu.png)
+Au lancement de l'application, on arrive sur la page d'accueil qui affiche la liste des vidéos ajoutées. 
+
 ## *Liens utiles*
 
 - [Procédure de connexion de téléphone en adb](Procédure_connexion_telephone_adb.md)
